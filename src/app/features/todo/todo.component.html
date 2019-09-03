@@ -1,0 +1,6 @@
+<header class="page-heder">
+  <h3>Your Todo List</h3>
+</header>
+<!-- () for output [] for input -->
+<app-entry (itemAdded)="addTodoItem($event)"></app-entry>
+<app-list [items]="todoList$ | async"> </app-list>
