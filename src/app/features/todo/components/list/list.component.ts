@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TodoListItem } from '../models';
+import { TodoListItem } from '../../models';
 
 @Component({
   selector: 'app-list',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListDataService } from './services/list-data.service';
-import { TodoListItem } from 'models';
+import { TodoListItem } from './models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -22,7 +23,7 @@ export class TodoComponent implements OnInit {
     //   console.log('Got this from the service', stuff);
     //   this.todoList = stuff;
     // })
-    this.todoList = this.service.getData();
+    this.todoList$ = this.service.getData();
   }
 
   addTodoItem(what: string) {
