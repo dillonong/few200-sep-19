@@ -5,6 +5,12 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class CounterEffects {
+  writeCountByForReset$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(actions.reset),
+      tap(() => localStorage.setItem('by', '1'))
+    ), { dispatch: false }
+  );
 
   writeCountyBy$ = createEffect(() =>
     this.actions$.pipe(
