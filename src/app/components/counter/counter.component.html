@@ -1,11 +1,17 @@
 <div>
   <input type="button"
+         [disabled]="(decrementDisabled$ | async)"
          class="btn btn-sm btn-primary"
          value="-"
          (click)=decrement()>
-  <span>{{current}}</span>
+  <span>{{ current$ | async }}</span>
   <input type="button"
          class="btn btn-sm btn-primary"
          value="+"
          (click)=increment()>
+</div>
+<div><input type="button"
+         (click)=reset()
+         value="Reset"
+         class="btn btm-md btn-primary">
 </div>
