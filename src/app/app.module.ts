@@ -29,6 +29,7 @@ import { CounterEffects } from './effects/counter.effects';
     AppRoutingModule,
     TodoModule,
 
+    //  THIS is how the reducer is hooked up
     StoreModule.forRoot(reducers), // Creates our application state - forRoot because this is on the ROOT of the application (app.module)
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CounterEffects])

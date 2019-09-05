@@ -1,6 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as actions from '../actions/counter.actions';
-import { by } from 'protractor';
 
 export interface CounterState {
   current: number;
