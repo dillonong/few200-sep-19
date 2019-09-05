@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WatchlistListItem } from '../../models';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { WatchListState, selectWatchListItems } from '../../reducers';
 
 @Component({
   selector: 'app-list',
@@ -8,13 +11,12 @@ import { WatchlistListItem } from '../../models';
 })
 export class ListComponent implements OnInit {
 
-  items: WatchlistListItem[] = [
-    { id: '1', title: 'Gilligan\'s Island' },
-    { id: '2', title: 'Star Trek Discovery' }
-  ];
-  constructor() { }
+  items$: Observable<WatchlistListItem[]>;
+
+  constructor(private store: Store<WatchListState>) { }
 
   ngOnInit() {
+    this.items$ = this.store.select(selectWatchListItems);
   }
 
 }
