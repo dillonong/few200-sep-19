@@ -15,6 +15,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
+import { WatchlistModule } from './features/watchlist/watchlist.module';
+import { ListComponent } from './features/components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { CounterEffects } from './effects/counter.effects';
     DashboardComponent,
     AboutComponent,
     NavComponent,
-    CounterComponent
+    CounterComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TodoModule,
+    WatchlistModule,
 
     //  THIS is how the reducer is hooked up
     StoreModule.forRoot(reducers), // Creates our application state - forRoot because this is on the ROOT of the application (app.module)
