@@ -16,7 +16,6 @@ import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
 import { WatchlistModule } from './features/watchlist/watchlist.module';
-import { ListComponent } from './features/components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { ListComponent } from './features/components/list/list.component';
     DashboardComponent,
     AboutComponent,
     NavComponent,
-    CounterComponent,
-    ListComponent
+    CounterComponent
   ],
   imports: [
     BrowserModule,
